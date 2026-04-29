@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jogo da Velha</title>
+    <meta charset="UTF-8">
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        margin-top: 40px;
+    }
+
+    h1 {
+        color: #222;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    #board {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 8px;
+    }
+
+    td {
+        width: 90px;
+        height: 90px;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        cursor: pointer;
+        transition: 0.2s ease;
+        user-select: none;
+    }
+
+    td:hover {
+        background: #e3f2fd;
+        transform: scale(1.08);
+    }
+
+    #aviso {
+        margin-top: 25px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        padding: 10px;
+    }
+
+    button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.ativo {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+    <body onload="iniciar()">
+
+    <h1>Jogo da Velha</h1>
+
+<button id="btn-facil" onclick="setDificuldade('facil')">Fácil</button>
+<button id="btn-medio" onclick="setDificuldade('medio')">Médio</button>
+<button id="btn-dificil" onclick="setDificuldade('dificil')">Difícil</button>
+
+    <div id="board"></div><br>
+
+    <div id="aviso">Vez do jogador O</div>
+    
+    <div>       
+    Escolha seu símbolo:
+    <button onclick="setJogador(1)">O começa</button>
+    <button onclick="setJogador(-1)">X começa</button>
+    </div>
+
+    <script src="/js/jogodavelha.js"></script>
+    
+    <button onclick="iniciar()">Reiniciar jogo</button>
+</body>
+</html>
